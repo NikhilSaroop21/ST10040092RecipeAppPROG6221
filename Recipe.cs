@@ -153,5 +153,71 @@ namespace ST10040092RecipeAppPROG6221
 			Console.ResetColor(); // Reset text color
 		}
 
+
+
+
+		// Scaling the quanity method and reseting the values to original values
+		public void ScaleRecipe()
+		{
+			if (recordedIngredientsSteps == null || ingredientStoredNames == null)
+			{
+				
+				Console.WriteLine("Recipe details are not entered yet.");
+			
+				return;
+			}
+		
+			Console.WriteLine("	Please enter the scaling factor (0.5, 2, or 3) to upscale the recipe, or 'reset' to revert to original values:");
+		
+			string inputchoice = Console.ReadLine();
+
+			if (inputchoice.Equals("reset", StringComparison.OrdinalIgnoreCase))
+			{
+				if (originalIngredientQuantities == null)
+				{
+				
+					Console.WriteLine("Recipe has not been upscaled yet. Original values are already displayed.");
+					
+					return;
+				}
+
+				// Reset recipe to original values
+				StoredIngredientQuantities = originalIngredientQuantities.ToArray();
+
+			
+				Console.WriteLine("\nRecipe reset to original values:");
+			
+				DisplayRecipe();
+				return;
+			}
+
+			if (!double.TryParse(inputchoice, out double scaleFactor) || (scaleFactor != 0.5 && scaleFactor != 2 && scaleFactor != 3))
+			{
+			
+				Console.WriteLine("Invalid input. Please enter 0.5, 2, 3, or 'reset'.");
+			
+				return;
+			}
+
+			// Store original ingredient quantities if not already stored
+			if (originalIngredientQuantities == null)
+			{
+				originalIngredientQuantities = StoredIngredientQuantities.ToArray();
+			}
+
+			for (int a = 0; a < StoredIngredientQuantities.Length; a++)
+			{
+				StoredIngredientQuantities[a] *= scaleFactor;
+			}
+
+			Console.WriteLine($"\nScaled Recipe (Factor: {scaleFactor}):");
+			DisplayRecipe();
+
+			
+			Console.WriteLine("Quantity scaled successfully!");
+		
+		}
+
+
 	}
 }
