@@ -22,19 +22,19 @@ namespace ST10040092RecipeAppPROG6221
 			{
 				Console.ForegroundColor = ConsoleColor.White; //setting the colour for the text to be white
 				Console.WriteLine("Please enter number of ingredients");
-				Console.ResetColor();
+				Console.ResetColor();// resets the texts color
 
 				if (!int.TryParse(Console.ReadLine(), out NumberOFIngredientsCount))
 				{
 					Console.ForegroundColor = ConsoleColor.Magenta;//setting the colour for the text to be Magenta
 					Console.WriteLine("Invalid input, an error has occured. Please enter a number for the number of ingredients.");
-					Console.ResetColor();
+					Console.ResetColor();// resets the texts color
 				}
 				else if (NumberOFIngredientsCount <= 0)
 				{
 					Console.ForegroundColor = ConsoleColor.Magenta;//setting the colour for the text to be Magenta
 					Console.WriteLine("Invalid input,an error has occured. The number of ingredients must be a positive integer.");
-					Console.ResetColor();
+					Console.ResetColor();// resets the texts color
 				}
 				else
 				{
@@ -62,13 +62,13 @@ namespace ST10040092RecipeAppPROG6221
 					{
 						Console.ForegroundColor = ConsoleColor.Magenta;//setting the colour for the text to be Magenta
 						Console.WriteLine("Invalid inputan error has occured. Please enter a numeric value for quantity.");
-						Console.ResetColor();
+						Console.ResetColor();// resets the texts color
 					}
 					else if (measurementQauntity <= 0)
 					{
 						Console.ForegroundColor = ConsoleColor.Magenta;//setting the colour for the text to be Magenta
 						Console.WriteLine("Invalid inputan error has occured. Quantity must be a positive number.");
-						Console.ResetColor();
+						Console.ResetColor();// resets the texts color
 					}
 					else
 					{
@@ -93,13 +93,13 @@ namespace ST10040092RecipeAppPROG6221
 				{
 					Console.ForegroundColor = ConsoleColor.Magenta;//setting the colour for the text to be Magenta
 					Console.WriteLine("Invalid input an error has occured. Please enter a number for the number of steps.");
-					Console.ResetColor();
+					Console.ResetColor();// resets the texts color
 				}
 				else if (numberOfStepsCount <= 0)
 				{
 					Console.ForegroundColor = ConsoleColor.Magenta;//setting the colour for the text to be Magenta
 					Console.WriteLine("Invalid inputan error has occured. The number of steps must be a positive integer.");
-					Console.ResetColor();
+					Console.ResetColor();// resets the texts color
 				}
 				else
 				{
@@ -119,7 +119,7 @@ namespace ST10040092RecipeAppPROG6221
 
 			Console.ForegroundColor = ConsoleColor.Yellow;//setting the colour for the text to be yellow
 			Console.WriteLine("Recipe details entered were successful!");
-			Console.ResetColor();
+			Console.ResetColor();// resets the texts color
 		}
 	}
 }
