@@ -39,7 +39,7 @@
 						recipe.DisplayRecipe();
 						break;
 					case 3:
-				
+						recipe.ScaleRecipe();
 						break;
 					case 4:
 					

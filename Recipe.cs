@@ -161,41 +161,41 @@ namespace ST10040092RecipeAppPROG6221
 		{
 			if (recordedIngredientsSteps == null || ingredientStoredNames == null)
 			{
-				
+				Console.ForegroundColor = ConsoleColor.Magenta; // Set text color to Magenta
 				Console.WriteLine("Recipe details are not entered yet.");
-			
+				Console.ResetColor(); // Reset text color
 				return;
 			}
-		
+			Console.ForegroundColor = ConsoleColor.Green; // Set text color to green
 			Console.WriteLine("	Please enter the scaling factor (0.5, 2, or 3) to upscale the recipe, or 'reset' to revert to original values:");
-		
-			string inputchoice = Console.ReadLine();
+			Console.ResetColor(); // Reset text color
+			string input = Console.ReadLine();
 
-			if (inputchoice.Equals("reset", StringComparison.OrdinalIgnoreCase))
+			if (input.Equals("reset", StringComparison.OrdinalIgnoreCase))
 			{
 				if (originalIngredientQuantities == null)
 				{
-				
+					Console.ForegroundColor = ConsoleColor.Magenta; // Set text color to pMagenta
 					Console.WriteLine("Recipe has not been upscaled yet. Original values are already displayed.");
-					
+					Console.ResetColor(); // Reset text color
 					return;
 				}
 
 				// Reset recipe to original values
 				StoredIngredientQuantities = originalIngredientQuantities.ToArray();
 
-			
+				Console.ForegroundColor = ConsoleColor.Green; // Set text color to green
 				Console.WriteLine("\nRecipe reset to original values:");
-			
+				Console.ResetColor(); // Reset text color
 				DisplayRecipe();
 				return;
 			}
 
-			if (!double.TryParse(inputchoice, out double scaleFactor) || (scaleFactor != 0.5 && scaleFactor != 2 && scaleFactor != 3))
+			if (!double.TryParse(input, out double scaleFactor) || (scaleFactor != 0.5 && scaleFactor != 2 && scaleFactor != 3))
 			{
-			
+				Console.ForegroundColor = ConsoleColor.Magenta; // Set text color to Magenta
 				Console.WriteLine("Invalid input. Please enter 0.5, 2, 3, or 'reset'.");
-			
+				Console.ResetColor(); // Reset text color
 				return;
 			}
 
@@ -213,10 +213,11 @@ namespace ST10040092RecipeAppPROG6221
 			Console.WriteLine($"\nScaled Recipe (Factor: {scaleFactor}):");
 			DisplayRecipe();
 
-			
+			Console.ForegroundColor = ConsoleColor.Cyan; // Set text color to cyan
 			Console.WriteLine("Quantity scaled successfully!");
-		
+			Console.ResetColor(); // Reset text color
 		}
+
 
 
 	}
