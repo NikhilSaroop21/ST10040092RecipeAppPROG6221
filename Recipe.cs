@@ -215,7 +215,7 @@ namespace ST10040092RecipeAppPROG6221
 
 			Console.ForegroundColor = ConsoleColor.Cyan; // Set text color to cyan
 			Console.WriteLine("Quantity scaled successfully!");
-			Console.ResetColor(); // Reset text color
+			Console.ResetColor(); // Reset text colors
 		}
 
 
