@@ -36,7 +36,7 @@
 
 				
 					case 2:
-					
+						recipe.DisplayRecipe();
 						break;
 					case 3:
 				

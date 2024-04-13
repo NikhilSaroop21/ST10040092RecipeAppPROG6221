@@ -121,5 +121,37 @@ namespace ST10040092RecipeAppPROG6221
 			Console.WriteLine("Recipe details entered were successful!");
 			Console.ResetColor();// resets the texts color
 		}
+
+		public void DisplayRecipe()
+		{
+			
+			Console.WriteLine("\nRecipe Details:");
+			Console.WriteLine("---------------");
+
+			if (ingredientStoredNames == null || recordedIngredientsSteps == null)
+			{
+				
+				Console.WriteLine("Recipe details are not entered yet.");
+			
+				return;
+			}
+
+			// Display ingredients
+			Console.WriteLine("\nIngredients:");
+			for (int c = 0; c < ingredientStoredNames.Length; c++)
+			{
+				Console.WriteLine($"{ingredientStoredNames[c]} - {StoredIngredientQuantities[c]} {StoredingredientUnits[c]}");
+			}
+
+			// Display steps
+			Console.WriteLine("\n Steps:");
+			for (int b = 0; b < recordedIngredientsSteps.Length; b++)
+			{
+				Console.WriteLine($"{b + 1}. {recordedIngredientsSteps[b]}");
+			}
+
+		
+		}
+
 	}
 }
