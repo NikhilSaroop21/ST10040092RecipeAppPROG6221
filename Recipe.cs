@@ -16,6 +16,34 @@ namespace ST10040092RecipeAppPROG6221
 		private double[] originalIngredientQuantities;
 
 
+		public void EnterRecipeDetails()
+		{
+			int NumberOFIngredientsCount;
+			while (true)
+			{
+				Console.WriteLine("Enter number of ingredients");
+
+
+
+				if (!int.TryParse(Console.ReadLine(), out NumberOFIngredientsCount))
+				{
+
+					Console.WriteLine("Invalid , error has occured  from input. Please enter a number for the number of ingredients.");
+
+
+				}
+				else if (NumberOFIngredientsCount <= 0)
+
+				{
+
+					Console.WriteLine("Invalid , error has occured  from input.The number of ingredients must be a positive integer.");
+
+				}
+				else
+				{
+					break; // Exit the loop if input is valid
+				}
+			}
 
 
 
@@ -38,6 +66,6 @@ namespace ST10040092RecipeAppPROG6221
 
 
 
-
+		}
 	}
 }

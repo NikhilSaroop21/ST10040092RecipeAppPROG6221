@@ -38,10 +38,10 @@
 					
 						break;
 					case 5:
-					
+						Console.WriteLine("Exiting the Recipe App.");
 						return;
 					default:
-					
+						Console.WriteLine("Invalid choice. Please try again.");
 						break;
 				}
 			}
