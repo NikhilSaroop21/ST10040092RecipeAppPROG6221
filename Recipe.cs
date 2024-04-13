@@ -20,20 +20,20 @@ namespace ST10040092RecipeAppPROG6221
 			// Input validation loop for the number of ingredients
 			while (true)
 			{
-				Console.ForegroundColor = ConsoleColor.White;
-				Console.WriteLine("Enter number of ingredients");
+				Console.ForegroundColor = ConsoleColor.White; //setting the colour for the text to be white
+				Console.WriteLine("Please enter number of ingredients");
 				Console.ResetColor();
 
 				if (!int.TryParse(Console.ReadLine(), out NumberOFIngredientsCount))
 				{
-					Console.ForegroundColor = ConsoleColor.Magenta;
-					Console.WriteLine("Invalid input. Please enter a number for the number of ingredients.");
+					Console.ForegroundColor = ConsoleColor.Magenta;//setting the colour for the text to be Magenta
+					Console.WriteLine("Invalid input, an error has occured. Please enter a number for the number of ingredients.");
 					Console.ResetColor();
 				}
 				else if (NumberOFIngredientsCount <= 0)
 				{
-					Console.ForegroundColor = ConsoleColor.Magenta;
-					Console.WriteLine("Invalid input. The number of ingredients must be a positive integer.");
+					Console.ForegroundColor = ConsoleColor.Magenta;//setting the colour for the text to be Magenta
+					Console.WriteLine("Invalid input,an error has occured. The number of ingredients must be a positive integer.");
 					Console.ResetColor();
 				}
 				else
@@ -41,8 +41,6 @@ namespace ST10040092RecipeAppPROG6221
 					break; // Exit the loop if input is valid
 				}
 			}
-
-
 
 			// Initialize arrays based on the number of ingredients
 			ingredientStoredNames = new string[NumberOFIngredientsCount];
@@ -62,14 +60,14 @@ namespace ST10040092RecipeAppPROG6221
 					Console.Write("Quantity of ingredients: ");
 					if (!double.TryParse(Console.ReadLine(), out double measurementQauntity))
 					{
-						Console.ForegroundColor = ConsoleColor.Magenta;
-						Console.WriteLine("Invalid input. Please enter a numeric value for quantity.");
+						Console.ForegroundColor = ConsoleColor.Magenta;//setting the colour for the text to be Magenta
+						Console.WriteLine("Invalid inputan error has occured. Please enter a numeric value for quantity.");
 						Console.ResetColor();
 					}
 					else if (measurementQauntity <= 0)
 					{
-						Console.ForegroundColor = ConsoleColor.Magenta;
-						Console.WriteLine("Invalid input. Quantity must be a positive number.");
+						Console.ForegroundColor = ConsoleColor.Magenta;//setting the colour for the text to be Magenta
+						Console.WriteLine("Invalid inputan error has occured. Quantity must be a positive number.");
 						Console.ResetColor();
 					}
 					else
@@ -79,8 +77,49 @@ namespace ST10040092RecipeAppPROG6221
 					}
 				}
 
-
+				Console.Write(" Please enter correct unit for that quantity: ");
+				StoredingredientUnits[D] = Console.ReadLine();
 			}
+
+			// Variable to store the number of steps
+			int numberOfStepsCount;
+
+			// Input validation loop for the number of steps
+			while (true)
+			{
+				Console.WriteLine("\n Please enter the number of steps:");
+
+				if (!int.TryParse(Console.ReadLine(), out numberOfStepsCount))
+				{
+					Console.ForegroundColor = ConsoleColor.Magenta;//setting the colour for the text to be Magenta
+					Console.WriteLine("Invalid input an error has occured. Please enter a number for the number of steps.");
+					Console.ResetColor();
+				}
+				else if (numberOfStepsCount <= 0)
+				{
+					Console.ForegroundColor = ConsoleColor.Magenta;//setting the colour for the text to be Magenta
+					Console.WriteLine("Invalid inputan error has occured. The number of steps must be a positive integer.");
+					Console.ResetColor();
+				}
+				else
+				{
+					break; // Exit the loop if input is valid
+				}
+			}
+
+			// Initialize array to store recipe steps
+			recordedIngredientsSteps = new string[numberOfStepsCount];
+
+			// Loop to input recipe steps
+			for (int a = 0; a < numberOfStepsCount; a++)
+			{
+				Console.WriteLine($"\n Please Enter step {a + 1}:");
+				recordedIngredientsSteps[a] = Console.ReadLine();
+			}
+
+			Console.ForegroundColor = ConsoleColor.Yellow;//setting the colour for the text to be yellow
+			Console.WriteLine("Recipe details entered were successful!");
+			Console.ResetColor();
 		}
 	}
 }
