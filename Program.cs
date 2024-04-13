@@ -25,9 +25,16 @@
 				switch (choice)
 				{
 					case 1:
-						
-					
+						// Set text color to green
+						Console.ForegroundColor = ConsoleColor.Green;
+						Console.WriteLine("\nEnter Recipe Details:");
+						Console.ResetColor();
+
+						// Call the method to enter recipe details
+						recipe.EnterRecipeDetails();
 						break;
+
+				
 					case 2:
 					
 						break;
