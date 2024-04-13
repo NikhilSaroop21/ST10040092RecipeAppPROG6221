@@ -124,15 +124,15 @@ namespace ST10040092RecipeAppPROG6221
 
 		public void DisplayRecipe()
 		{
-			
+			Console.ForegroundColor = ConsoleColor.DarkYellow; // Set text color to darkyellow
 			Console.WriteLine("\nRecipe Details:");
 			Console.WriteLine("---------------");
 
 			if (ingredientStoredNames == null || recordedIngredientsSteps == null)
 			{
-				
+				Console.ForegroundColor = ConsoleColor.Magenta; // Set text color to Magenta
 				Console.WriteLine("Recipe details are not entered yet.");
-			
+				Console.ResetColor(); // Reset text color
 				return;
 			}
 
@@ -150,7 +150,7 @@ namespace ST10040092RecipeAppPROG6221
 				Console.WriteLine($"{b + 1}. {recordedIngredientsSteps[b]}");
 			}
 
-		
+			Console.ResetColor(); // Reset text color
 		}
 
 	}
