@@ -218,7 +218,38 @@ namespace ST10040092RecipeAppPROG6221
 			Console.ResetColor(); // Reset text colors
 		}
 
+		public void ClearRecipe()
+		{
+			Console.ForegroundColor = ConsoleColor.DarkRed; // Set text color to darkRed
+			Console.WriteLine("Are you sure you want to clear the recipe? (yes/no)");
+			Console.ResetColor(); // Reset text color
 
+			string confirmed = Console.ReadLine();
 
+			if (confirmed.Equals("yes", StringComparison.OrdinalIgnoreCase))
+			{
+				ingredientStoredNames = null;
+				StoredIngredientQuantities = null;
+				StoredingredientUnits = null;
+				recordedIngredientsSteps = null;
+
+				Console.ForegroundColor = ConsoleColor.Blue; // Set text color to blue
+				Console.WriteLine("Recipe cleared. You can now enter a new recipe.");
+				Console.ResetColor(); // Reset text color
+			}
+			else if (confirmed.Equals("no", StringComparison.OrdinalIgnoreCase))
+			{
+				Console.ForegroundColor = ConsoleColor.Blue; // Set text color to blue
+				Console.WriteLine("Clearing recipe canceled. Recipe data remains unchanged.");
+				Console.ResetColor(); // Reset text color
+			}
+			else
+			{
+				Console.ForegroundColor = ConsoleColor.Magenta; // Set text color to Magenta
+				Console.WriteLine("Invalid input. Please enter 'yes' or 'no'.");
+				Console.ResetColor(); // Reset text color
+			}
+
+		}
 	}
 }

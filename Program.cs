@@ -42,7 +42,7 @@
 						recipe.ScaleRecipe();
 						break;
 					case 4:
-					
+						recipe.ClearRecipe();
 						break;
 					case 5:
 						Console.WriteLine("Exiting the Recipe App.");
