@@ -194,7 +194,7 @@ namespace ST10040092RecipeAppPROG6221
 			if (!double.TryParse(input, out double scaleFactor) || (scaleFactor != 0.5 && scaleFactor != 2 && scaleFactor != 3))
 			{
 				Console.ForegroundColor = ConsoleColor.Magenta; // Set text color to Magenta
-				Console.WriteLine("Invalid input. Please enter 0.5, 2, 3, or 'reset'.");
+				Console.WriteLine("Invalid input an error occured. Please enter 0.5, 2, 3, or 'reset'.");
 				Console.ResetColor(); // Reset text color
 				return;
 			}
@@ -246,7 +246,7 @@ namespace ST10040092RecipeAppPROG6221
 			else
 			{
 				Console.ForegroundColor = ConsoleColor.Magenta; // Set text color to Magenta
-				Console.WriteLine("Invalid input. Please enter 'yes' or 'no'.");
+				Console.WriteLine("Invalid input, an error occured. Please enter 'yes' or 'no'.");
 				Console.ResetColor(); // Reset text color
 			}
 
