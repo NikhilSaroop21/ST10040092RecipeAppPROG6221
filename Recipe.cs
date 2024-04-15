@@ -207,7 +207,7 @@ namespace ST10040092RecipeAppPROG6221
 					StoredIngredientQuantities = originalIngredientQuantities.ToArray();
 
 					Console.ForegroundColor = ConsoleColor.Green; // Set text color to green
-					Console.WriteLine("\nRecipe reset to original values:");
+					Console.WriteLine("\nRecipe reset to original values:"); // message outputted when they reseting the new values back to the original ones
 					Console.ResetColor(); // Reset text color
 					DisplayRecipe();
 					return;
