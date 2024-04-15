@@ -24,17 +24,22 @@ The Recipe Application prioritizes user experience with clear prompts, informati
 ###6. Colour is added to provide a simple but good looking interface.It also asssists in the Recipe Application to note error validation and communicate success validation in the use of the application for use. 
 ## How to Use
 
-##7. Recipe Application is set up as shown below in a menu format
+##7. Steps to use the Recipe Application is set up.
+First start the application in Visual Studio or your IDE
 
-Choose an option
+1.Choose the correct repo from github , select code on github , choose option to display code whether you want to clone the repository , download zip file ect.
 
-1. Enter Recipe Details: Choose the option to enter recipe details and follow the prompts to input ingredient information and preparation steps ,ensure right values are placed into input before submitting.
+2.Press the play button after opening recipe application, ensure the  cmd and the application is running then follow the steps below as a menu format is displayed for you as the user to choose and use.
 
-2. Display Recipe: View the entered recipe details, including ingredients and preparation steps.
+3.Choose an option
 
-3. Scale Recipe / Reset to Original: Adjust ingredient quantities by selecting the scaling factor (0.5, 2, or 3) or revert to the original recipe if needed.
+4. Enter Recipe Details: Choose the option to enter recipe details and follow the prompts to input ingredient information and preparation steps ,ensure right values are placed into input before submitting.
 
-4. Clear Recipe: Clear the existing entered recipe to start afresh.
+5. Display Recipe: View the entered recipe details, including ingredients and preparation steps.
+
+6. Scale Recipe / Reset to Original: Adjust ingredient quantities by selecting the scaling factor (0.5, 2, or 3) or revert to the original recipe if needed.
+
+7. Clear Recipe: Clear the existing entered recipe to start afresh.
 
 5. Exit: Quit the Recipe Application.
 
