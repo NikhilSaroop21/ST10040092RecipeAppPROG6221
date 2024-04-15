@@ -165,10 +165,10 @@ namespace ST10040092RecipeAppPROG6221
 
 				Console.ResetColor(); // Reset text color
 			}
-			catch (Exception ex)
+			catch (Exception exChoice)
 			{
 				Console.ForegroundColor = ConsoleColor.Red; // Set text color to red for error
-				Console.WriteLine($"An error occurred: {ex.Message}");
+				Console.WriteLine($"An error occurred: {exChoice.Message}");
 				Console.ResetColor(); // Reset text color
 			}
 		}
