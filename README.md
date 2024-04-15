@@ -2,7 +2,7 @@
 
 # Recipe  Application
 
-RecipeAppPoe is a  console application created to manage the creation and management of  recipes. It ensures a user with a simple and intuitive interface for entering ingredients, preparation steps, and adjusting quantities as needed. This README is created to provide a overview of the application's features and functionalities.
+The Recipe Application is a  console application created to manage the creation and management of  recipes. It ensures a user with a simple and intuitive interface for entering ingredients, preparation steps, and adjusting quantities as needed. This README is created to provide a overview of the application's features and functionalities.
 
 ## Features
 
