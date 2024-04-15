@@ -215,7 +215,7 @@ namespace ST10040092RecipeAppPROG6221
 					return;
 				}
 
-				if (!double.TryParse(input, out double scaleFactor) || (scaleFactor != 0.5 && scaleFactor != 2 && scaleFactor != 3))
+				if (!double.TryParse(input, out double scaleFactor) || (scaleFactor != 0.5 && scaleFactor != 2 && scaleFactor != 3)) //if statement with conditions
 				{
 					Console.ForegroundColor = ConsoleColor.Magenta; // Set text color to Magenta
 					Console.WriteLine("Invalid input an error occured. Please enter 0.5, 2, 3, or 'reset'.");
@@ -229,6 +229,7 @@ namespace ST10040092RecipeAppPROG6221
 					originalIngredientQuantities = StoredIngredientQuantities.ToArray();
 				}
 
+				// calling the ingredients array to scale 
 				for (int a = 0; a < StoredIngredientQuantities.Length; a++)
 				{
 					StoredIngredientQuantities[a] *= scaleFactor;
