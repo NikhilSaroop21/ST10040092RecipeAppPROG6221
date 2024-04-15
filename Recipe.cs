@@ -63,7 +63,7 @@ namespace ST10040092RecipeAppPROG6221
 						if (!double.TryParse(Console.ReadLine(), out double measurementQauntity))
 						{
 							Console.ForegroundColor = ConsoleColor.Magenta;//setting the colour for the text to be Magenta
-							Console.WriteLine("Invalid inputan error has occured. Please enter a numeric value for quantity.");
+							Console.WriteLine("Invalid input an error has occured. Please enter a numeric value for quantity.");
 							Console.ResetColor();// resets the texts color
 						}
 						else if (measurementQauntity <= 0)
@@ -131,6 +131,10 @@ namespace ST10040092RecipeAppPROG6221
 			}
 		}
 
+
+
+
+	//created a display recipe method to display the arrays stored information regarding the details of the user choosen to stored
 		public void DisplayRecipe()
 		{
 			try
@@ -245,6 +249,9 @@ namespace ST10040092RecipeAppPROG6221
 			}
 		}
 
+
+		//clear recipe method that uses try ,catch , if statements to check whether the user wants to clear the stored array information 
+		// included validations to check whether they cleared , dont want to clear 
 		public void ClearRecipe()
 		{
 			try
