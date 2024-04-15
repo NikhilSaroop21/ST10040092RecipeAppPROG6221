@@ -4,8 +4,11 @@
 	{
 		static void Main(string[] args)
 		{
-			Recipe recipe = new Recipe();
 
+			// calling the recipe class
+			Recipe recipe = new Recipe();
+			// while loop to ask the user for their choice with switch case for choices
+			//methods brought from recipe class to program clas
 			while (true)
 			{
 				Console.WriteLine("\nChoose an option:");
