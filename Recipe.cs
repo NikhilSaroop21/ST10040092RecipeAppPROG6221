@@ -60,7 +60,7 @@ namespace ST10040092RecipeAppPROG6221
 					while (true)
 					{
 						Console.Write("Quantity of ingredients: ");
-						if (!double.TryParse(Console.ReadLine(), out double measurementQauntity))
+						if (!double.TryParse(Console.ReadLine(), out double measurementQauntity))//parsing the variable double
 						{
 							Console.ForegroundColor = ConsoleColor.Magenta;//setting the colour for the text to be Magenta
 							Console.WriteLine("Invalid input an error has occured. Please enter a numeric value for quantity.");
