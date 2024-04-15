@@ -23,19 +23,19 @@ namespace ST10040092RecipeAppPROG6221
 				while (true)
 				{
 					Console.ForegroundColor = ConsoleColor.White; //setting the colour for the text to be white
-					Console.WriteLine("Please enter number of ingredients");// asking user to enter their number of ingredients as a int value
+					Console.WriteLine("Please enter number of ingredients");
 					Console.ResetColor();// resets the texts color
 
 					if (!int.TryParse(Console.ReadLine(), out NumberOFIngredientsCount))
 					{
 						Console.ForegroundColor = ConsoleColor.Magenta;//setting the colour for the text to be Magenta
-						Console.WriteLine("Invalid input, an error has occured. Please enter a number for the number of ingredients."); // validation to makw the user enter a integer
+						Console.WriteLine("Invalid input, an error has occured. Please enter a number for the number of ingredients.");
 						Console.ResetColor();// resets the texts color
 					}
-					else if (NumberOFIngredientsCount <= 0) // condition to check whther they entered the value above or equal to 0
+					else if (NumberOFIngredientsCount <= 0)
 					{
 						Console.ForegroundColor = ConsoleColor.Magenta;//setting the colour for the text to be Magenta
-						Console.WriteLine("Invalid input,an error has occured. The number of ingredients must be a positive integer.");//asking the user to input a positive integer not justany integer 
+						Console.WriteLine("Invalid input,an error has occured. The number of ingredients must be a positive integer.");
 						Console.ResetColor();// resets the texts color
 					}
 					else
@@ -63,7 +63,7 @@ namespace ST10040092RecipeAppPROG6221
 						if (!double.TryParse(Console.ReadLine(), out double measurementQauntity))
 						{
 							Console.ForegroundColor = ConsoleColor.Magenta;//setting the colour for the text to be Magenta
-							Console.WriteLine("Invalid inputan error has occured. Please enter a numeric value for quantity.");//error message to make the user enter a number
+							Console.WriteLine("Invalid inputan error has occured. Please enter a numeric value for quantity.");
 							Console.ResetColor();// resets the texts color
 						}
 						else if (measurementQauntity <= 0)
@@ -94,22 +94,22 @@ namespace ST10040092RecipeAppPROG6221
 					if (!int.TryParse(Console.ReadLine(), out numberOfStepsCount))
 					{
 						Console.ForegroundColor = ConsoleColor.Magenta;//setting the colour for the text to be Magenta
-						Console.WriteLine("Invalid input an error has occured. Please enter a number for the number of steps.");//error message to make the user enter a number
+						Console.WriteLine("Invalid input an error has occured. Please enter a number for the number of steps.");
 						Console.ResetColor();// resets the texts color
 					}
 					else if (numberOfStepsCount <= 0)
 					{
 						Console.ForegroundColor = ConsoleColor.Magenta;//setting the colour for the text to be Magenta
-						Console.WriteLine("Invalid inputan error has occured. The number of steps must be a positive integer.");//error message to make the user enter a number that is a number
+						Console.WriteLine("Invalid inputan error has occured. The number of steps must be a positive integer.");
 						Console.ResetColor();// resets the texts color
 					}
 					else
 					{
-						break; // Exiting the loop when the users input  is valid
+						break; // Exit the loop if input is valid
 					}
 				}
 
-				// We want to initialize the  array so it stores  the recipe steps
+				// Initialize array to store recipe steps
 				recordedIngredientsSteps = new string[numberOfStepsCount];
 
 				// Loop to input recipe steps
@@ -123,16 +123,14 @@ namespace ST10040092RecipeAppPROG6221
 				Console.WriteLine("Recipe details entered were successful!");
 				Console.ResetColor();// resets the texts color
 			}
-			catch (Exception exChoice)
+			catch (Exception ex)
 			{
 				Console.ForegroundColor = ConsoleColor.Red; // Set text color to red for error
-				Console.WriteLine($"An error occurred: {exChoice.Message}");
+				Console.WriteLine($"An error occurred: {ex.Message}");
 				Console.ResetColor(); // Reset text color
 			}
 		}
 
-
-		//method to diplay the recipe on the appliction , we call this method into the main
 		public void DisplayRecipe()
 		{
 			try
@@ -141,38 +139,34 @@ namespace ST10040092RecipeAppPROG6221
 				Console.WriteLine("\nRecipe Details:");
 				Console.WriteLine("---------------");
 
-				if (ingredientStoredNames == null || recordedIngredientsSteps == null) // if statement in case the user has no stored details in these arrays
+				if (ingredientStoredNames == null || recordedIngredientsSteps == null)
 				{
 					Console.ForegroundColor = ConsoleColor.Magenta; // Set text color to Magenta
-					Console.WriteLine("Recipe details are not entered yet."); // message when there are no stored details
+					Console.WriteLine("Recipe details are not entered yet.");
 					Console.ResetColor(); // Reset text color
 					return;
 				}
 
 				// Display ingredients
 				Console.WriteLine("\nIngredients:");
-
-				for (int c = 0; c < ingredientStoredNames.Length; c++)// Loop that is going through all the found elements in the ingredientStoredNames array
+				for (int c = 0; c < ingredientStoredNames.Length; c++)
 				{
-					Console.WriteLine($"{ingredientStoredNames[c]} - {StoredIngredientQuantities[c]} {StoredingredientUnits[c]}");//we want to  display the name, quantity, and unit of each ingredient
+					Console.WriteLine($"{ingredientStoredNames[c]} - {StoredIngredientQuantities[c]} {StoredingredientUnits[c]}");
 				}
 
 				// Display steps
 				Console.WriteLine("\n Steps:");
-
-				// Looping the steps in the recordedIngredientsSteps array
 				for (int b = 0; b < recordedIngredientsSteps.Length; b++)
 				{
-
-					Console.WriteLine($"{b + 1}. {recordedIngredientsSteps[b]}");// we  want to display the correct step number and its corresponding description
+					Console.WriteLine($"{b + 1}. {recordedIngredientsSteps[b]}");
 				}
 
 				Console.ResetColor(); // Reset text color
 			}
-			catch (Exception exChoice)
+			catch (Exception ex)
 			{
-				Console.ForegroundColor = ConsoleColor.Red; // Set text color to red for error message
-				Console.WriteLine($"An error occurred: {exChoice.Message}");  // Display the error message associated with the exception
+				Console.ForegroundColor = ConsoleColor.Red; // Set text color to red for error
+				Console.WriteLine($"An error occurred: {ex.Message}");
 				Console.ResetColor(); // Reset text color
 			}
 		}
@@ -188,28 +182,21 @@ namespace ST10040092RecipeAppPROG6221
 				if (recordedIngredientsSteps == null || ingredientStoredNames == null)
 				{
 					Console.ForegroundColor = ConsoleColor.Magenta; // Set text color to Magenta
-					Console.WriteLine("Recipe details are not entered yet."); // error message
+					Console.WriteLine("Recipe details are not entered yet.");
 					Console.ResetColor(); // Reset text color
 					return;
 				}
 				Console.ForegroundColor = ConsoleColor.Green; // Set text color to green
-				Console.WriteLine("    Please enter the scaling factor (0.5, 2, or 3) to upscale the recipe, or 'reset' to revert to original values:"); // asking the user to enter their choice for scaling whether they want to scale up or down to original
+				Console.WriteLine("    Please enter the scaling factor (0.5, 2, or 3) to upscale the recipe, or 'reset' to revert to original values:");
 				Console.ResetColor(); // Reset text color
 				string input = Console.ReadLine();
 
 				if (input.Equals("reset", StringComparison.OrdinalIgnoreCase))
 				{
-					if (originalIngredientQuantities == null)// Check if either recordedIngredientsSteps or ingredientStoredNames is null
-						if (recordedIngredientsSteps == null || ingredientStoredNames == null)
-						{
-							// If either array is null, it indicates that there are no recorded steps or ingredients stored
-							// Display a message or perform necessary actions to handle this scenario
-							// For example, prompt the user to add ingredients or steps
-						}
-
+					if (originalIngredientQuantities == null)
 					{
 						Console.ForegroundColor = ConsoleColor.Magenta; // Set text color to pMagenta
-						Console.WriteLine("Recipe has not been upscaled yet. Original values are already displayed."); //updated message displayed
+						Console.WriteLine("Recipe has not been upscaled yet. Original values are already displayed.");
 						Console.ResetColor(); // Reset text color
 						return;
 					}
@@ -218,7 +205,7 @@ namespace ST10040092RecipeAppPROG6221
 					StoredIngredientQuantities = originalIngredientQuantities.ToArray();
 
 					Console.ForegroundColor = ConsoleColor.Green; // Set text color to green
-					Console.WriteLine("\nRecipe reset to original values:"); // message outputted when they reseting the new values back to the original ones
+					Console.WriteLine("\nRecipe reset to original values:");
 					Console.ResetColor(); // Reset text color
 					DisplayRecipe();
 					return;
@@ -227,7 +214,7 @@ namespace ST10040092RecipeAppPROG6221
 				if (!double.TryParse(input, out double scaleFactor) || (scaleFactor != 0.5 && scaleFactor != 2 && scaleFactor != 3))
 				{
 					Console.ForegroundColor = ConsoleColor.Magenta; // Set text color to Magenta
-					Console.WriteLine("Invalid input an error occured. Please enter 0.5, 2, 3, or 'reset'."); // error message
+					Console.WriteLine("Invalid input an error occured. Please enter 0.5, 2, 3, or 'reset'.");
 					Console.ResetColor(); // Reset text color
 					return;
 				}
@@ -237,18 +224,17 @@ namespace ST10040092RecipeAppPROG6221
 				{
 					originalIngredientQuantities = StoredIngredientQuantities.ToArray();
 				}
-				
-				for (int a = 0; a < StoredIngredientQuantities.Length; a++) // loop through each all elements within the storedIngredients
+
+				for (int a = 0; a < StoredIngredientQuantities.Length; a++)
 				{
-					
-					StoredIngredientQuantities[a] *= scaleFactor; // multiply each of the users elements by the scalfactor choosen
+					StoredIngredientQuantities[a] *= scaleFactor;
 				}
 
 				Console.WriteLine($"\nScaled Recipe (Factor: {scaleFactor}):");
-				DisplayRecipe(); // call method to display the users recipe
+				DisplayRecipe();
 
 				Console.ForegroundColor = ConsoleColor.Cyan; // Set text color to cyan
-				Console.WriteLine("Quantity scaled successfully!"); //outputs when the user has chosen their output and the application scales it up
+				Console.WriteLine("Quantity scaled successfully!");
 				Console.ResetColor(); // Reset text colors
 			}
 			catch (Exception ex)
@@ -258,9 +244,7 @@ namespace ST10040092RecipeAppPROG6221
 				Console.ResetColor(); // Reset text color
 			}
 		}
-		//clearing the recipe for the stored recipe in the application 
-		//made use of a try ,catch, if else and else if 
-		//
+
 		public void ClearRecipe()
 		{
 			try
@@ -285,13 +269,13 @@ namespace ST10040092RecipeAppPROG6221
 				else if (confirmed.Equals("no", StringComparison.OrdinalIgnoreCase))
 				{
 					Console.ForegroundColor = ConsoleColor.Blue; // Set text color to blue
-					Console.WriteLine("Clearing recipe canceled. Recipe data remains unchanged.");// a message to show that there is no change in the recipe when they choose no
+					Console.WriteLine("Clearing recipe canceled. Recipe data remains unchanged.");
 					Console.ResetColor(); // Reset text color
 				}
 				else
 				{
 					Console.ForegroundColor = ConsoleColor.Magenta; // Set text color to Magenta
-					Console.WriteLine("Invalid input, an error occured. Please enter 'yes' or 'no'."); //error message to make the user choose one of the following given options , either yes or no
+					Console.WriteLine("Invalid input, an error occured. Please enter 'yes' or 'no'.");
 					Console.ResetColor(); // Reset text color
 				}
 			}
@@ -304,4 +288,3 @@ namespace ST10040092RecipeAppPROG6221
 		}
 	}
 }
-
